@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                background-color: black;
+                overflow: hidden;
+                
+            }
+            .para{
+                width:50%;
+               /* border: 1px solid black;*/
+               color:white;
+               font-size: 5px;
+                margin:20% 25%;
+                opacity: 0.25;
+                transition: opacity 5s ease-in, font-size 5s ease-in;
+                text-align: center;
+               
+            }
+
+            .appear{
+            font-size: 100px; 
+              opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <p class="para">
+            Hello World
+        </p>
+    </body>
+
+    <script>
+         const para_1= document.querySelector(".para");
+         para_options={};
+         
+         const para_observer= 
+         new IntersectionObserver(function(entries, para_observer){
+            
+            entries.ForEach(entry=>{
+                if(!entry.isIntersecting){
+                    return;
+                }
+                else{
+                    console.log(entry.target);
+                    para_1.classList.add("appear");
+                }
+             })
+         
+         
+         
+         }
+         ,para_options);
+
+         para_observer.observe(para_1);
+    </script>
+</html>

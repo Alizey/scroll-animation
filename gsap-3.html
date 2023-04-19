@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OnScroll</title>
+    </head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        }
+
+        header{
+            height:100vh;
+            background: #11998e;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+       
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            padding: 2%;
+            color: white;
+            font-size: 3vh;
+        }
+
+    /*article{
+        /*height: 100vh;
+        
+    }*/
+
+    .dot{
+       
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        position: relative;
+      
+    }
+    .black-dot{
+        width: 50%;
+        position: absolute;
+        animation: bdot 3s ease-in-out infinite;
+        scale: 1;
+    }
+
+  /* @keyframes bdot {
+        0%{
+            scale:4
+        }
+        100%{
+            scale:0
+        }
+        
+    }*/
+     .head{
+        position: absolute;
+        z-index: 10;
+        color:white;
+        opacity:0,
+     }
+
+     .red-dot{
+        position: absolute;
+        z-index: 1;
+        width: 2%;
+        animation: rdot 2s ease-in-out infinite;
+
+     }
+ /*@keyframes rdot {
+        0%{
+            scale: 1;
+
+        }
+
+        100%{
+            scale:5
+        }
+        
+     }*/
+
+     .bubble{
+        width:10%;
+        margin-top: 20%;
+        
+     }
+
+   
+
+    
+
+
+    </style>
+
+    <body>
+        <header>
+            <nav class="navigation">
+                <ul>
+                    <li>Home</li>
+                    <li>AboutUs</li>
+                    <li>ContactUs</li>
+                    <li>Menu</li>
+                </ul>
+            </nav>
+
+            <img class="bubble" src="bubble.png">
+           
+            
+        </header>
+      
+
+        <section class="dot">
+          
+                <img class="black-dot" src="dot.png">-->
+                <img class="red-dot" src="red-dot.png">
+                <h1 class="head">Hello World</h1>
+           
+            
+        </section>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+        <script>
+               gsap.registerPlugin(ScrollTrigger);
+               gsap.to('.black-dot',{
+                scale:0,
+                duration:5,
+                scrollTrigger: {
+               trigger:'.black-dot',
+               start:"top 80%",
+               /* end:()=> `+ ${document.querySelector('.food').offsetHeight}`,*/
+               end:"top 5%",    
+               scrub:2,
+               pin:true,
+               toggleActions:'restart none none none',                                  //The values are
+                                                                                              // play , reverse,restart, resume, pause , complete, none.They can be used interchangeably
+                              //onEnter onLeave     onEnterBack      onLeaveBack
+              
+               markers:{
+                    startColor:"purple",
+                    endColor:"fushsia",
+                    fontSize:"2rem"
+                },
+               /*toggleClass:"head"*/
+              
+
+
+            }
+
+               })
+
+            gsap.to('.red-dot',{
+                scale:30,
+                duration:5,
+                scrollTrigger: {
+               trigger:'.red-dot',
+               start:"top 80%",
+               /* end:()=> `+ ${document.querySelector('.food').offsetHeight}`,*/
+               end:"top 5%",    
+               scrub:2,
+               pin:true,
+               toggleActions:'restart none none none',                                  //The values are
+                                                                                              // play , reverse,restart, resume, pause , complete, none.They can be used interchangeably
+                              //onEnter onLeave     onEnterBack      onLeaveBack
+              
+               markers:{
+                    startColor:"purple",
+                    endColor:"fushsia",
+                    fontSize:"2rem"
+                },
+               /*toggleClass:"head"*/
+              
+
+
+            }
+
+               })
+
+
+               /*gsap.to('.bubble',{
+                
+                x:1200,
+                
+                duration:5,
+                scrollTrigger: {
+                    trigger:'.bubble-2',
+                    start:"top 30%",
+                    /* end:()=> `+ ${document.querySelector('.food').offsetHeight}`,
+                    end:"top 2%",    
+                    scrub:1,
+                    pin:'.bubble',
+                    pinSpacing:true,
+               
+               toggleActions:'restart none none none',                                  //The values are
+                                                                                              // play , reverse,restart, resume, pause , complete, none.They can be used interchangeably
+                              //onEnter onLeave     onEnterBack      onLeaveBack
+              
+               markers:{
+                    startColor:"red",
+                    endColor:"blue",
+                    fontSize:"2rem"
+                },
+               /*toggleClass:"head"
+              
+
+
+            }
+
+               })
+*/
+
+const tl = gsap.timeline({
+    scrollTrigger : {
+        trigger:'.bubble',
+        markers:true,
+        start:'top 20%',
+       // end:'top 2%',
+        scrub:4
+    }
+
+})
+
+tl.to('.bubble',{x:800 , y:100 , duration:2})
+tl.to('.bubble',{x:300 , y:200 , duration:2})
+tl.to('.bubble',{x:500 , y:500 , duration:2})
+
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,204 @@
+:root{
+    --font-size-head:clamp(1em ,1vw ,9em);
+    --font-size-subhead:clamp(1em ,1vw ,8em);
+    --font-size-para:clamp(0.5em, 1vw, 7em);
+
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.margin_top{
+  margin-top: 5%;
+}
+
+.margin_top_2{
+  margin-top: 2%;
+}
+
+.blue{
+  color:#592ea9;
+}
+
+.grey{
+  color:#6d6e76;
+}
+
+
+nav{
+  display:flex;
+  justify-content: space-around;
+  background-color: #232536;
+  padding: 1%;
+  color:white;
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+
+}
+
+nav li{
+  display: inline-block;
+  padding:10px 20px;
+  list-style: none;
+  position: relative;
+  height: 100%;
+}
+
+nav a{
+  color:white;
+  text-decoration: none;
+}
+
+button{
+  padding:1% 2%;
+  background-color:#ffd050;
+  border-radius: 50px;
+  color:black;
+
+   }
+
+ nav a:hover{
+          color:#dcdcdc;
+          cursor:pointer;
+      }
+
+
+button:hover{
+        background-color: green;
+        cursor:pointer;
+        color:white;
+
+    }
+
+    nav a:before{
+      content: '';
+      display: block;
+      height:5px;
+      width: 0;
+      background-color:white;
+      position: absolute;
+      top: -45px;
+      border-radius: 20px;
+      transition: all ease-in-out 250ms;
+      
+      
+  }
+
+  nav a:hover::before{
+      width: 60%;
+  }
+
+
+.home_section_1{
+    width: 100%;
+   aspect-ratio: 3/1;
+   margin-top: 5%;
+}
+
+.relative-section{
+    position:relative;
+}
+
+.absolute-text{
+    
+    position: absolute;
+    top:28%;
+    color:white;
+    left:5%;
+    font-size: var(--font-size-head);
+    
+}
+
+
+
+.sub-head{
+    font-size: var(--font-size-subhead);
+}
+
+.para{
+    font-size: var(--font-size-para);
+    
+}
+
+.yellow{
+   background-color :#ffd050;
+  
+   
+}
+
+.button{
+    padding: 2% 5%;
+    font-size: var(--font-size-para);
+    cursor: pointer;
+    color: black;
+    border-color: #ffd050;
+}
+
+.button:hover{
+    background-color: black;
+    color:white;
+    border-color: black;
+}
+
+
+.section-2{
+   margin: 5% 10%;
+   width: 90%;
+   display: flex;
+  
+}
+
+
+.column_1{
+  width:50%;
+}
+
+.column_2{
+  width: 5%;
+  
+}
+
+.blog{
+  padding: 5%;
+  padding-right: 15%;
+  letter-spacing: 1px;
+  font-size:var(--font-size-para);
+  height: 9vh;
+  
+  
+}
+
+.blog:hover{
+  background-color:#fbf6ea;
+}
+
+
+.section-3{
+  width:90%;
+  background-color: #f4f0f8;
+  height: 12vh;
+}
+
+
+
+
+@media only screen and (max-device-width: 768px) {
+     .absolute-text{
+        top:8%;
+       
+     }
+
+    
+
+    
+   
+
+
+  }

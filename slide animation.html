@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <style>
+          .section_1{
+            
+           
+            width: 70%;
+            display: flex;
+            padding:5%;
+            opacity:0;
+            transition: opacity 2s ease-in;
+            
+          }
+
+        .appear{
+            opacity: 1;
+        }
+       </style>
+    </head>
+    <body>
+         <div class="section_1">
+            <img src="archi_1.jpg" style="width:30%">
+            <p style="width:30%; margin-left:5%">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, architecto omnis? Maiores consequuntur esse delectus ipsum expedita earum voluptas doloribus suscipit. Culpa libero vero exercitationem, impedit tempora vel in accusamus!
+            </p>
+         </div>
+
+
+         <div class="section_1">
+            <img src="archi_1.jpg" style="width:30%">
+            <p style="width:30%; margin-left:5%">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, architecto omnis? Maiores consequuntur esse delectus ipsum expedita earum voluptas doloribus suscipit. Culpa libero vero exercitationem, impedit tempora vel in accusamus!
+            </p>
+         </div>
+
+         <div class="section_1">
+            <img src="archi_1.jpg" style="width:30%">
+            <p style="width:30%; margin-left:5%">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, architecto omnis? Maiores consequuntur esse delectus ipsum expedita earum voluptas doloribus suscipit. Culpa libero vero exercitationem, impedit tempora vel in accusamus!
+            </p>
+         </div>
+
+         <div class="section_1">
+            <img src="archi_1.jpg" style="width:30%">
+            <p style="width:30%; margin-left:5%">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, architecto omnis? Maiores consequuntur esse delectus ipsum expedita earum voluptas doloribus suscipit. Culpa libero vero exercitationem, impedit tempora vel in accusamus!
+            </p>
+         </div>
+
+         <div class="section_1">
+            <img src="archi_1.jpg" style="width:30%">
+            <p style="width:30%; margin-left:5%">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, architecto omnis? Maiores consequuntur esse delectus ipsum expedita earum voluptas doloribus suscipit. Culpa libero vero exercitationem, impedit tempora vel in accusamus!
+            </p>
+         </div>
+         
+         <script>
+               const section1= document.querySelectorAll(".section_1");
+               const options={
+                threshold:0.5,
+               };
+               const section1_observer= 
+               new IntersectionObserver (function(entries, options){
+                    entries.forEach(entry=>{
+                        if(!entry.isIntersecting){
+                            return;
+                        }
+                        else{
+                            console.log(entry.target)
+                            entry.target.classList.add("appear");
+                            section1_observer.unobserve(entry.target);
+                        }
+                    })
+
+
+               }, options);
+               
+               section1.forEach(section=>{
+                section1_observer.observe(section);
+               })
+              
+                
+         </script>
+    </body>
+</html>

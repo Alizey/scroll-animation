@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Navbar</title>
+
+       <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+          nav{
+            display: flex;
+            justify-content: space-around;
+            background-color: black;
+            color:white;
+            text-align: center;
+            padding:3%;
+            
+          }
+          nav li {
+            display: inline-block;
+            padding:10px 20px;
+            position : relative;
+            height: 100%;
+            
+
+          }
+
+       
+
+
+
+          button{
+            padding:1% 2%;
+            background-color: red;
+            border-radius: 50px;
+            color:white;
+         
+                  }
+
+            nav a:hover{
+                color:#dcdcdc;
+                cursor:pointer;
+            }
+
+            button:hover{
+                background-color: green;
+                cursor:pointer;
+
+            }
+            
+
+            nav a:before{
+                content: '';
+                display: block;
+                height:5px;
+                width: 0;
+                background-color:white;
+                position: absolute;
+                top: -45px;
+                border-radius: 20px;
+                transition: all ease-in-out 250ms;
+                
+                
+            }
+
+            nav a:hover::before{
+                width: 60%;
+            }
+       </style>
+    </head>
+    <body>
+       <nav>
+          <h2>LOGO</h2>
+          
+          <ul>
+            <li><a href#>Home</a></li>
+            <li><a href#>Contactus</a></li>
+            <li><a href#>Menu</a></li>
+            <li><a href#>Aboutus</a></li>
+          </ul>
+          
+        
+          <button>Subscribe</button>
+
+         
+             
+          
+
+       </nav>
+    </body>
+
+</html>

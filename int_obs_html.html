@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .nav_bar{
+            padding:2%;
+            background-color: green;
+            position: fixed;
+            z-index: 1;
+            width: 100%;
+        }
+
+        a{
+            text-decoration: none;
+            color:white;
+            padding:140px;
+            font-size: 1.2em;
+           
+        }
+
+        .section_2{
+            display: inline-block;
+        }
+
+
+        .change{
+            background-color: black;
+        }
+      </style>
+    </head>
+
+    <body>
+        <nav class="menu-bar">
+            <a href="#home"> Home</a>
+            <a href="#home"> Intro</a>
+            <a href="#home"> Contact Us</a>
+            <a href="#home"> about us</a>
+        </nav>
+        <img class="image_section " src="archi_2.jpg" style="width:95% ;margin-left:auto ; margin-right:auto; display: block;">
+        
+        <div  class ="section_2 "style="width:22% ; margin:5%">
+        <img src="archi_1.jpg" style="width:100%" >
+        
+        <p >
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
+        </p>
+        
+        </div>
+
+        <div class ="section_2 " style="width:22% ; margin:5%">
+        <img src="archi_3.jpg" style="width:100%" >
+        
+        <p style="margin-top:5%">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
+        </p>
+    </div>
+
+    <div class ="section_2 " style="width:22% ; margin:5%">
+        <img src="archi_3.jpg" style="width:100%" >
+        
+        <p style="margin-top:5%">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
+        </p>
+    </div>
+
+    <div class ="section_2 " style="width:22% ; margin:5%">
+        <img src="archi_3.jpg" style="width:100%" >
+        
+        <p style="margin-top:5%">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
+        </p>
+    </div>
+
+    <div class ="section_2 " style="width:22% ; margin:5%">
+        <img src="archi_3.jpg" style="width:100%" >
+        
+        <p style="margin-top:5%">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
+        </p>
+    </div>
+
+    <div class ="section_2 " style="width:22% ; margin:5%">
+        <img src="archi_3.jpg" style="width:100%" >
+        
+        <p style="margin-top:5%">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
+        </p>
+    </div>
+
+    <script>
+       const menu_bar= document.querySelector(".menu-bar");
+                const image_main= document.querySelector(".image_1");
+                //const link =document.querySelector("a");
+
+                const options={
+                    rootMargin: "-50px 0px 0px 0px"
+                };
+                const image_observer= 
+                new IntersectionObserver (function(entries, image_observer){
+                     
+                    entries.forEach(entry => {
+                        if(!entry.isIntersecting){
+                            menu_bar.classList.add("change");
+                            //link.classList.add("change_link");
+
+                        }
+                        else{
+                            menu_bar.classList.remove("change");
+                            //link.classList.remove("change_link");
+                        }
+                    })
+                } , options)
+
+                image_observer.observe(image_main);
+    </script>
+
+    </body>
+</html>
