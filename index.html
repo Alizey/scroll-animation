@@ -1,351 +1,102 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <style>
-          @font-face {
-             font-family: Binance PLEX;      /*In this case I have downloaded Binance Plex font */
-             src: url(BinancePlex-Regular.ttf);
-              }
-          
-          :root{
-           --margin_top:2%;
-          }
+       <title>GSAP Animation</title>
 
+       <style>
           *{
-            font-family:Binance PLEX;
-            margin:0;
-            padding:0;
-           }
-
-          
-          .nav_bar{
-             
-              background-color: transparent;
-              width: 100%;
-              padding: 1%;
-              font-size: clamp(1rem, 1vw, 2rem); 
-              position: absolute;
-              top:0;
-              z-index: 999;
-              transition: background-color 0.3s ease-in-out;
-              
-
-              
-          }
-          
-          
-          .image_main{
-              margin-left: auto;
-              margin-right: auto;
-              width: 100%;
-              display: block;
-              opacity: 0.9;
-              position: relative;
-             
-              
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
           }
 
-         .nav_bar a{
-            
-            text-decoration: none;
-            color:white;
-            margin-right:10%;
-            font-weight: bold;
-            float: right;
-           }
-
-           .nav_bar a:hover{
-              color:#fe0000;
-           }
-
-           .heading{
-            
-            text-align: center;
-            
-           }
-
-           .onscroll_navbar{
-            position:fixed;
-            background-color:#3e1b04;
-           }
-
-           .aboutus_section{
-            margin-top: var(--margin_top);
-            width:80%;
-            margin-right: auto;
-            margin-left: 20%;
+          header,footer{
+            height: 100vh;
             display: flex;
-            margin-top: 5%;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
-            
-           }
+            justify-content: center;
+            align-items: center;
+            font-family: 'Montserra' , sans-serif;
 
-           .aboutus_subsec{
-              width:30%;
-           }
+          }
 
-           .aboutus_onscroll{
-            opacity: 1;
-           }
+          header h1{
+            font-size: 60px;
+          }
 
-           .menu{
-            margin-top: 2%;
-            margin-left:20%;
-            margin-right:auto;
-            border:3px solid #3e1b04;
-            width:58%;
-            padding:2%;
-            box-shadow: 0 4px 8px 0 rgba(62, 27, 4, 1), 0 6px 20px 0 rgba(62, 27, 4, 1);
-;
-           }
+          .animation{
+             height: 100vh;
+             background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+             position: relative;
+             overflow: hidden;
 
-           .color{
-            color:#3e1b04;
-           }
+            }
 
-           .drink-menu{
-            display: none;
-           }
-           
-           .button{
-            padding:1% 2%;
-           }
-
-           .eat-color{
-            background-color:green;
-           }
-           .eat-color .drink-color{
-                 color:red;
-           }
-
-          
-      </style>
-    
+            .paper-plane{
+                height: 100px;
+                top:50%;
+                left:0;
+                position: absolute;
+            }
+       </style>
     </head>
     <body>
+       <!-- <header>
+            <h1>Scroll Animation</h1>
+        </header>-->
+
+        <section class="animation">
+            <img class="paper-plane" src="paper-plane.png" alt="paper-plane">
+        </section>
+
+       <!-- <footer>
+            <h1>Woooooo</h1>
+        </footer>-->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js" integrity="sha512-kDuUo39RGApdfHkM1WQL8Pg9BYtYGS5rD14AzePsD4SEaixw7v/ykAkLMdsSjuBCNFE6/FAP+WIHh6N6QZJl5w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js" integrity="sha512-hFyYiBIWCYSyo98oFGWjG5V8HEV4g5O2pxu0mzU8qIMC7lrrwtcKWoRDZcpRL0ywIIM2d/XsBJ9iXNLFf6kIgw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js" integrity="sha512-7nSmgdAZ7oPdT5aa2a4YauI8Y1xgaj6zZtQo9+EIEhpcNEiRHPAtyTKYckBQ0lmg1xQKrdWweHBcN/D0tdnvCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenLite.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js" integrity="sha512-I0VFyPo7hdM7YrEbQ0pvX4bX2904k0+B19u/xBrPrQoMprfcSnIDfGFD8kP52GbAhwtDjkEVhXlQvj8+vkJyew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js" integrity="sha512-ht40uOoiTef4nKq0THVzjIGh3VS108J577LVVgNXnQLXza3doXjoM3owin2vd+Hm6w88k12RIrePIVY2WNzz6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/BezierPlugin.min.js" integrity="sha512-oOy5+mtZRcqjn6b9k4oj+tk2/hVIetzOAM9Y5cndEHgLxiIGavAz1agbHf6JjGzxXZ2SMbu08Uy1DDF0UwA0qQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
-        <nav class="nav_bar">
-          <img src="logo_2.jpg" style="width: 50px; margin-left: 2%;">
-           <a href=#menu>Menu</a>
-           <a href=#contactus>Contact Us</a>
-           <a href=#aboutus>About Us</a>
-           <a href=#home>Home</a>
-        </nav>
+        <script>
+            const flightpath= {
+                curviness:2.25,
+                autoRotate:true,
+                values:[
+                    {x:100 , y :-20},
+                    {x:300,y:10},
+                    {x:500, y:100},
+                    {x:750 , y:-100},
+                    {x:350, y:-50},
+                    {x:600 , y:100},
+                    {x:800 , y:0},
+                    {x:window.innerWidth , y:-250}
+                ]
+            }
 
-        <img class="image_main" src="food_3.jpg">
-
-        
-        <div class="aboutus_section">
-        <div class="aboutus_subsec">
-          <h1 class="color">
-             About us
-          </h1>
-          <br>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore quod dolorem harum repellendus dignissimos dicta, officiis id accusamus tenetur dolorum, magnam adipisci? Voluptatem atque laboriosam earum eveniet quisquam sed optio!
-          </p>
-        </div>
-        <img src="food_6.jpg" style="width:40%; margin-left:8% ">
-      </div>
-        
-
-      
-     
-
-            <img src="food_2.jpg" style="width:65%; margin-top:2% ; margin-right:auto; margin-left: auto; display: block;">
-            
-            <div  class="menu ">
-            
-               <h1 class="color">Menu</h1></br>
-              
-               <button class="eat-color button" onclick="eat_function()">Eat</button>
-               <button class="drink-color button" onclick="drink_function()">Drink</button>
-              
-               <br>
-               <div class="eat-menu">
-                
-                <div>
-                <h3 class="color">
-                  Bread Basket
-                </h3>
-                <p>Assortment of fresh baked fruit breads and muffins 5.50</p>
-              </div>
-             <br>
-            <div>
-              <h3 class="color">
-                Honey Almond Granola with Fruits
-              </h3>
-              <p class="color">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p>
-           </div>
-            
-           <br>
-           
-           <div>
-            <h3 class="color">
-              Belgian Waffle
-            </h3>
-            <p class="color">Vanilla flavored batter with malted flour 7.50</p>
-         </div>
-         
-         <br>
-         
-         <div>
-          <h3 class="color">
-            Scrambled eggs
-          </h3>
-          <p class="color"> Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p>
-       </div>
-
-       <br>
-       <div>
-        <h3 class="color">
-          Blueberry Pancakes
-        </h3>
-        <p class="color">With syrup, butter and lots of berries 8.50</p>
-     </div>
-
-    </div>
-
-    <div class="drink-menu">
-      <div>
-        <h3 class="color">
-          Coffee
-        </h3>
-        <p class="color">Regular coffee 2.50</p>
-     </div>
-
-     <div>
-      <h3 class="color">
-        Chocolato
-      </h3>
-      <p class="color">Chocolate espresso with milk 4.50</p>
-   </div>
-
-   <div>
-    <h3 class="color">
-      Correto
-    </h3>
-    <p class="color">Whiskey and coffee 5.00</p>
- </div>
-
-
- <div>
-  <h3 class="color">
-    Iced tea
-  </h3>
-  <p class="color">Hot tea, except not hot 3.00</p>
-</div>
-
-<div>
-  <h3 class="color">
-    Soda
-  </h3>
-  <p class="color">Coke, Sprite, Fanta, etc. 2.50</p>
-</div>
-
-
-
-
-    
-    
-    
-    </div>
-</div>
-
-
-
-
-
-          </div>
-
-
-          
-      
-      <!--<div class="aboutus_section">
-        <img src="food_4.jpg" style="width: 40%">
-        <div class="aboutus_subsec">
-          <h1 style="color:#3e1b04">
-             About us
-          </h1>
-          <br>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non temporibus mollitia, suscipit in beatae corrupti inventore consequuntur praesentium voluptatem! Sit odio delectus quas perspiciatis aspernatur beatae iste corporis eveniet quo!
-          </p>
-      </div>-->
-
-        
-
-       <script>
-            const navbar= document.querySelector(".nav_bar");
-            const imagemain= document.querySelector(".image_main");
-            const aboutussection= document.querySelectorAll(".aboutus_section");
-
-            const image_options={
-              rootMargin: "-450px 0px 0px 0px",
-            };
-            const image_main_observer= new IntersectionObserver(function(entries, image_main_observer){
-                   
-                entries.forEach(entry=>{
-                     if(!entry.isIntersecting){
-                         console.log(entry.target);
-                         navbar.classList.add("onscroll_navbar");
-                     }
-
-                     else {
-                         navbar.classList.remove("onscroll_navbar");
-                     }
+            const tween = new TimelineLite();
+            tween.add(
+                TweenLite.to('.paper-plane' , 1 , {
+                    bezier:flightpath,
+                    ease:Power1.easeInOut
                 })
+            )
 
-            
-            
-            }
-          , image_options)
-
-          image_main_observer.observe(imagemain);
-
-          const aboutus_options={
-            threshold: 0.5
-          };
-
-          const aboutus_observer= new IntersectionObserver(
-            function(entries, aboutus_observer){
-               entries.forEach(entry=>{
-                  if(!entry.isIntersecting){
-                       return;
-                  }
-                  else{
-                    entry.target.classList.add("aboutus_onscroll");
-                    aboutus_observer.unobserve(entry.target);
-                  }
-               })
-            }
-            
-            
-            
-           , image_options);
-
-           aboutussection.forEach(section =>{
-            aboutus_observer.observe(section);
-           })
-         
-
-           function eat_function(){
-              const eat= document.querySelector(".eat-menu");
-              const drink=document.querySelector(".drink-menu");
-              eat.style.display="block";
-              drink.style.display="none";
-           }
-
-
-           function drink_function(){
-            const drink=document.querySelector(".drink-menu");
-            const eat= document.querySelector(".eat-menu");
-            drink.style.display="block";
-            eat.style.display="none";
-            
-          } 
-
+            const controller = new ScrollMagic.Controller();
+             const scene = new ScrollMagic.Scene({
+                  triggerElement : '.animation',
+                  duration:5000,
+                  triggerHook:0
+             })
+             .setTween(tween)
+             .addIndicators()
+             .setPin('.animation')
+             .addTo(controller)
         </script>
+    
+    
+    
     </body>
 </html>
